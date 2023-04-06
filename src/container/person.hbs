@@ -1,43 +1,46 @@
 {{#with person}}
-{{> title data="Person" big=true}}
 <section>
-    <div>
-        {{name}}
-    </div>
-    <br>
-    <div>
-        age: {{age}}
-    </div>
-    <br>
-    <div>
-        {{gender}}
-    </div>
-    <br>
-    <div>
-        {{#with address}}
-        <address>
-            <div>
-                {{street}}
-            </div>
-            <div>
-                {{city}}
-            </div>
-            <div>
-                {{state}}
-            </div>
-            <div>
-                {{zip}}
-            </div>
-            <div>
-                {{country}}
-            </div>
-        </address>
-        {{/with}}
-    </div>
+    <big>
+        <div>
+            <h1>
+                {{name}}
+            </h1>
+        </div>
+        <br>
+        <div>
+            age: {{age}}
+        </div>
+        <div>
+            {{gender}}
+        </div>
+        <br>
+        <div>
+            {{#with address}}
+            <address>
+                <div>
+                    {{street}}
+                </div>
+                <div>
+                    {{city}}
+                </div>
+                <div>
+                    {{state}}
+                </div>
+                <div>
+                    {{zip}}
+                </div>
+                <div>
+                    {{country}}
+                </div>
+            </address>
+            {{/with}}
+        </div>
+    </big>
 </section>
 <hr>
 {{#each education}}
 <section>
+    <h2>Education</h2>
     <div>
         <div>
             Degree:
@@ -60,6 +63,7 @@
 {{/each}}
 <hr>
 <section>
+    <h2>Work Experience</h2>
     <div>
         {{#each workExperience}}
         <div>
@@ -128,12 +132,36 @@
                         <ul>
                             <li>
                                 <p>{{name}}</p>
-                                <p>{{description}}</p>
-                                {{#with technologies}}
+                                <p>{{title}}</p>
+                                <p>{{email}}</p>
+                                {{#each skills}}
                                 <ul>
                                     <li>{{this}}</li>
                                 </ul>
-                                {{/with}}
+                                {{/each}}
+                                {{#each projects}}
+                                <ul>
+                                    <li>
+                                        <p>{{name}}</p>
+                                        <p>{{description}}</p>
+                                        {{#each technologies}}
+                                        <ol>
+                                            <li>
+                                                {{this}}
+                                            </li>
+                                        </ol>
+                                        {{/each}}
+                                        {{#each team_members}}
+                                        <ul>
+                                            <li>
+                                                <p>{{name}}</p>
+                                                <p>{{title}}</p>
+                                            </li>
+                                        </ul>
+                                        {{/each}}
+                                    </li>
+                                </ul>
+                                {{/each}}
                             </li>
                         </ul>
                         {{/each}}
@@ -148,4 +176,5 @@
     {{/each}}
     </div>
 </section>
+<hr>
 {{/with}}
