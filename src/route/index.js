@@ -477,6 +477,7 @@ router.get('/program', function (req, res) {
 
         program: [
           {
+            programname: 'Program 1:',
             name: 'Museum Visit',
             type: 'Art',
             duration: 3,
@@ -512,6 +513,7 @@ router.get('/program', function (req, res) {
             },
           },
           {
+            programname: 'Program 2:',
             name: 'Cultural Show',
             type: 'Music and Dance',
             duration: 2,
