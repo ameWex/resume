@@ -463,6 +463,9 @@ router.get('/bio', function (req, res) {
 router.get('/program', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('program', {
+
+    layout: 'program',
+
     program: {
       excursion: {
         name: 'Cultural Tour',
@@ -471,6 +474,7 @@ router.get('/program', function (req, res) {
           country: 'France',
         },
         date: '2023-06-15',
+
         program: [
           {
             name: 'Museum Visit',
