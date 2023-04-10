@@ -2,16 +2,106 @@
     {{#with program}}
     <div>
         {{#with excursion}}
-        <h1>{{name}}</h1>
         <div>
-            <h2>
-                {{location.city}}
-            </h2>
-            <h2>
-                {{location.country}}
-            </h2>
+            <h1>{{name}}</h1>
+            <div>
+                <h2>
+                    {{location.city}}
+                </h2>
+                <h2>
+                    {{location.country}}
+                </h2>
+            </div>
+            <h3>{{date}}</h3>
+            <hr>
+            {{#each program}}
+            <div>
+                <div>
+                    <ul>
+                        <h3>Program 1:</h3>
+                        <li>
+                            <div>{{name}}</div>
+                            <div>{{type}}</div>
+                            <div>{{duration}}</div>
+                            <br>
+                            {{#with details}}
+                            <div>
+                                {{#with museum}}
+                                <h3>Museum:</h3>
+                                <div>{{name}}</div>
+                                <div>
+                                    {{#with location}}
+                                    <address>
+                                        <div>{{address}}</div>
+                                        <div>{{city}}</div>
+                                        <div>{{country}}</div>
+                                    </address>
+                                    {{/with}}
+                                </div>
+                                <br>
+                                <h3>Exhibits:</h3>
+                                {{#each exhibits}}
+                                <ul>
+                                    <div>{{name}}</div>
+                                    <div>{{artist}}</div>
+                                    <div>{{description}}</div>
+                                    <div>{{#if audio_guide}} (audio guide) {{/if}}</div>
+                                </ul>
+                                <br><br>
+                                {{/each}}
+                                {{/with}}
+
+
+                                <div>{{guide.name}}</div>
+                                <div>{{guide.language}}</div>
+                                <div>{{guide.rating}}</div>
+                                <br>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            {{/each}}
+            <br>
+            <hr>
+            <div>
+                {{!-- <ul>
+                    <h3>Program 2:</h3>
+                    <li>
+                        <div>{{name}}</div>
+                        <div>{{type}}</div>
+                        <div>{{duration}}</div>
+                        {{#each details}}
+                        <div>
+                            {{#with venue}}
+                            <div>
+                                <div>{{name}}</div>
+                                {{#with location}}
+                                <div>
+                                    <div>{{address}}</div>
+                                    <div>{{city}}</div>
+                                    <div>{{country}}</div>
+                                </div>
+                                {{/with}}
+                            </div>
+                            {{/with}}
+                            <h3>performers:</h3>
+                            {{#each performers}}
+                            <div>
+                                <div>{{name}}</div>
+                                <div>{{type}}</div>
+                            </div>
+                            {{/each}}
+                        </div>
+                        {{/each}}
+                    </li>
+                </ul> --}}
+
+            </div>
         </div>
-        {{/with}}
+        {{}}
     </div>
     {{/with}}
+</div>
+{{/with}}
 </div>
