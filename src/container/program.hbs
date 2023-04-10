@@ -18,7 +18,7 @@
             <div>
                 <div>
                     <ul>
-                        <h3>Program 1:</h3>
+                        <h3>{{programname}}</h3>
                         <li>
                             <div>{{name}}</div>
                             <div>{{type}}</div>
@@ -50,58 +50,47 @@
                                 <br><br>
                                 {{/each}}
                                 {{/with}}
-
-
+                                {{#with venue}}
+                                <h4>Venue:</h4>
+                                <ul>
+                                    <li>
+                                        <div>{{name}}</div>
+                                        {{#with location}}
+                                        <div>{{address}}</div>
+                                        <div>{{city}}</div>
+                                        <div>{{country}}</div>
+                                        {{/with}}
+                                    </li>
+                                </ul>
+                                {{/with}}
+                                <br>
+                                {{#each performers}}
+                                <h4>Performers:</h4>
+                                <ul>
+                                    <li>
+                                        <div>{{name}}</div>
+                                        <div>{{type}}</div>
+                                    </li>
+                                </ul>
+                                {{/each}}
+                                <br>
                                 <div>{{guide.name}}</div>
                                 <div>{{guide.language}}</div>
                                 <div>{{guide.rating}}</div>
                                 <br>
                             </div>
+                            {{/with}}
                         </li>
                     </ul>
                 </div>
+                <br>
+                <hr>
+                <div>
+                </div>
             </div>
             {{/each}}
-            <br>
-            <hr>
-            <div>
-                {{!-- <ul>
-                    <h3>Program 2:</h3>
-                    <li>
-                        <div>{{name}}</div>
-                        <div>{{type}}</div>
-                        <div>{{duration}}</div>
-                        {{#each details}}
-                        <div>
-                            {{#with venue}}
-                            <div>
-                                <div>{{name}}</div>
-                                {{#with location}}
-                                <div>
-                                    <div>{{address}}</div>
-                                    <div>{{city}}</div>
-                                    <div>{{country}}</div>
-                                </div>
-                                {{/with}}
-                            </div>
-                            {{/with}}
-                            <h3>performers:</h3>
-                            {{#each performers}}
-                            <div>
-                                <div>{{name}}</div>
-                                <div>{{type}}</div>
-                            </div>
-                            {{/each}}
-                        </div>
-                        {{/each}}
-                    </li>
-                </ul> --}}
-
-            </div>
         </div>
-        {{}}
+        {{/with}}
     </div>
     {{/with}}
-</div>
-{{/with}}
 </div>
