@@ -1,7 +1,12 @@
 <div>
     <h1>{{name}}</h1>
     <h2>{{description}}</h2>
-    <h3>{{history}}</h3>
+    <br>
+    <h3>History</h3>
+    {{#with history}}
+    <div>{{year}}</div>
+    <div>{{founder}}</div>
+    {{/with}}
     <br>
     <hr>
     <h4>Types:</h4>
