@@ -1,0 +1,95 @@
+<div>
+    <main>
+        {{#with page_header}}
+        <h1 class="text-center">{{title}}</h1>
+        <br>
+        <div class="text-muted text-uppercase text-center">{{title}}</div>
+</div>
+{{/with}}
+<br>
+{{#with section}}
+<section>
+    {{#with about_us}}
+    <div class="card">
+        <div class="card-body">
+            {{#with title_list}}
+            <div class="display-6 text-end">{{main}}</div>
+            <h2 class="text-end">{{sub}}</h2>
+            {{/with}}
+            <br>
+            {{#with button}}
+            <button class="btn btn-info">{{text}}</button>
+            {{/with}}
+        </div>
+    </div>
+    {{/with}}
+    <br>
+    {{#with advantage}}
+    <div class="card">
+        <div class="card-body">
+            <div class="display-5">{{title}}</div>
+            <br>
+            {{#with efficiency}}
+            <div class="card">
+                <div class="card-body">
+                    <div class="display-4">{{title}}</div><br>
+                    <h6>{{sub_title}}</h6>
+                    <div class="text-muted">{{description}}</div>
+                    <br><button class="btn btn-warning">{{button}}</button>
+                </div>
+            </div>
+            {{/with}}
+            <br>
+            {{#with innovation}}
+            <div class="card">
+                <div class="card-body">
+                    <div class="display-4 text-center">{{title}}</div><br>
+                    <h6 class="text-center">{{sub_title}}</h6>
+                    <div class="text-muted text-center">{{description}}</div>
+                    <br><button class="btn btn-warning">{{button}}</button>
+                </div>
+            </div>
+            {{/with}}
+            <br>
+            {{#with collaboration}}
+            <div class="card">
+                <div class="card-body">
+                    <div class="display-4 text-end">{{title}}</div><br>
+                    <h6 class="text-end">{{sub_title}}</h6>
+                    <div class="text-muted text-end">{{description}}</div>
+                    <br><button class="btn btn-warning">{{button}}</button>
+                </div>
+            </div>
+            {{/with}}
+        </div>
+    </div>
+    {{/with}}
+    <br>
+    {{#with agreement}}
+    <div class="card">
+        <div class="card-body">
+            <div class="display-5">{{title}}</div>
+            {{#with info}}
+            <div class="card">
+                <div class="card-body">
+                    <h5>{{sub_title}}</h5>
+                    <br>
+                    {{#with detail}}
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="text-muted">{{text}}</div>
+                            <br>
+                            <button class="btn btn-success">{{button}}</button>
+                        </div>
+                    </div>
+                    {{/with}}
+                </div>
+            </div>
+            {{/with}}
+        </div>
+    </div>
+    {{/with}}
+</section>
+{{/with}}
+</main>
+</div>
