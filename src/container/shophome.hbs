@@ -1,0 +1,128 @@
+<main class="p-3 m-2">
+    {{#with navigation}}
+    <nav class="nav mb-5">
+        <div class="card nav-tabs">
+            {{#each links}}
+            <div class="nav-item">
+                <a class="nav-link" href="{{href}}" target="_blank">{{text}}</a>
+            </div>
+            {{/each}}
+        </div>
+    </nav>
+    {{/with}}
+    <section class="row col-12 mb-5">
+        {{#with newsBlock}}
+        <div class="col-3 g-2">
+            <div class="card alert">
+                <div class="alert-dark text-bg-dark">
+                    <div class="card-header">
+                        <h2 class="display-4 text-center">{{title}}</h2>
+                    </div>
+                    {{#each cards}}
+                    <div class="card-body">
+                        <h3 class="card-title">{{title}}</h3>
+                        <p class="text-muted">{{description}}</p>
+                        {{#if isTop}}
+                        <div class="text-bg-danger badge rounded-pill">Топ</div>
+                        {{/if}}
+                        {{#if isNew}}
+                        <div class="text-bg-success badge rounded-pill">Нова</div>
+                        {{/if}}
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+            {{/with}}
+        </div>
+    </section>
+    <hr>
+    <section class="row col-12">
+        {{#with goodsBlock}}
+        {{#each tabs}}
+        <nav class="nav col-2">
+            <div class="nav-tabs">
+                <div class="nav-item">
+                    {{#if isActive}}
+                    <div class="active">{{text}}</div>
+                    {{/if}}
+                    {{#if isDisabled}}
+                    <div class="disabled text-muted">{{text}}</div>
+                    {{/if}}
+                </div>
+            </div>
+        </nav>
+        {{/each}}
+    </section>
+    <section>
+        {{#each cards}}
+        <div class="card col-4">
+            <div class="card-header">
+                <img src="{{image}}" alt="{{title}}" class="">
+            </div>
+            <div class="card-body">
+                <h5 class="display-5">{{title}}</h5>
+                <p>{{desription}}</p>
+                {{#if isHot}}
+                <div class="badge text-bg-warning rounded-pill">HOT!</div>
+                {{/if}}
+                {{#if isNew}}
+                <div class="badge text-bg-info rounded-pill">New</div>
+                {{/if}}
+            </div>
+        </div>
+        {{/each}}
+        {{/with}}
+    </section>
+    <section class="alert">
+        {{#with subscribe}}
+        <div class="card text-bg-dark">
+            <h2 class="display-6 card-header">{{header}}</h2>
+            <div class="card-body">
+                <p>{{description}}</p>
+                {{#each buttons}}
+                <div>
+                    <a class="btn btn-primary mb-3" href="{{link}}">{{text}}</a>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+        {{/with}}
+    </section>
+    <section class="alert">
+        {{#with service}}
+        <div class="card text-center">
+            <div class=" alert-success text-bg-success">
+                <h2 class="display-6 card-header">{{title}}</h2>
+                <div class="card-body">
+                    <p>{{description}}</p>
+                    {{#each buttons}}
+                    <div>
+                        <a class="btn btn-primary" href="{{link}}">{{text}}</a>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+        {{/with}}
+    </section>
+    <section>
+        {{#each footer}}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        <a href="{{link}}">{{text}}</a>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <a href="{{link}}">{{text}}</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        {{/each}}
+    </section>
+</main>
