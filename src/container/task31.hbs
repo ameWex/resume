@@ -133,4 +133,96 @@
     </div>
     {{/with}}
     </div>
+    <section>
+        {{#with relaxion}}
+        <h2 class="display-3">{{title}}</h2>
+        <div class="row col-8">
+            {{#each cards}}
+            <div class="col-6 g-2">
+                <div class="card text-secondary">
+                    <div class="card-header">{{header}}</div>
+                    <div class="card-body">
+                        <h3 class="card-title">{{title}}</h3>
+                        <p>{{description}}</p>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+        {{/with}}
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        {{#with rest}}
+        <div class="row col-10">
+            {{#each cards}}
+            <div class="col-6">
+                <div class="card">
+                    <div class="card-header text-center"><b>{{header}}</b></div>
+                </div>
+                <div class="card-body">
+                    <h3 class="text-center card-title">{{title}}</h3>
+                    <p class="text-center">{{description}}</p>
+                    <div class="text-center">
+                        <button class="btn-btn-primary">{{button}}</button>
+                    </div>
+                </div>
+                <div class="text-center card-footer">{{footer}}</div>
+            </div>
+            {{/each}}
+        </div>
+        {{/with}}
+    </section>
+    <section>
+        {{#with proposition}}
+        <h2 class="display-2">{{title}}</h2>
+        <div class="row col-10">
+            {{#each card}}
+            <div class="col-5 g-3">
+                <div class="card text-warning">
+                    <div class="card-header text-light">{{header}}</div>
+                    <div class="card-body">
+                        <h3 class="text-light card-title">{{title}}</h3>
+                        <p class="text-light">{{description}}</p>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+        {{/with}}
+        {{#with footer}}
+        <h5 class="display-5">{{title}}</h5>
+
+        <table class="table">
+            <tbody>
+
+                <tr>{{#each navigation}}
+                    <td>
+                        <a class="btn btn-link" href="{{href}}">{{text}}</a>
+                    </td>
+                    {{/each}}
+                </tr>
+
+                <tr>{{#each socialMedia}}
+                    <td>
+                        <a class="btn btn-dark" href="{{link}}">{{name}}</a>
+                    </td>
+                    {{/each}}
+                </tr>
+                <tr>
+                    {{#each partners}}
+                    <td>
+                        <a class="btn btn-info" href="{{link}}">{{name}}</a>
+                    </td>
+                    {{/each}}
+                </tr>
+            </tbody>
+        </table>
+        {{/with}}
+    </section>
+
 </main>
