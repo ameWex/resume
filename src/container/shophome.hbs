@@ -13,8 +13,8 @@
     <section class="row col-12 mb-5">
         {{#with newsBlock}}
         <div class="col-3 g-2">
-            <div class="card alert">
-                <div class="alert-dark text-bg-dark">
+            <div class="card">
+                <div class="alert-dark text-bg-dark g-5">
                     <div class="card-header">
                         <h2 class="display-4 text-center">{{title}}</h2>
                     </div>
@@ -29,6 +29,7 @@
                         <div class="text-bg-success badge rounded-pill">Нова</div>
                         {{/if}}
                     </div>
+                    <hr>
                     {{/each}}
                 </div>
             </div>
@@ -57,11 +58,11 @@
         {{#each cards}}
         <div class="card col-4">
             <div class="card-header">
-                <img src="{{image}}" alt="{{title}}" class="">
+                <img src="{{image}}" alt="{{title}}" class="col-12">
             </div>
             <div class="card-body">
                 <h5 class="display-5">{{title}}</h5>
-                <p>{{desription}}</p>
+                <p>{{description}}</p>
                 {{#if isHot}}
                 <div class="badge text-bg-warning rounded-pill">HOT!</div>
                 {{/if}}
