@@ -1589,6 +1589,7 @@ router.get('/shophome', function (req, res) {
           isActive: true,
           isDisabled: false,
           text: 'Electronics',
+
         },
         {
           isActive: false,

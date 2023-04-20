@@ -38,7 +38,8 @@
         {{#each tabs}}
         <nav class="nav col-2">
             <div class="nav-tabs">
-                <div class="nav-item {{#if isActive}}active{{/if}} {{#if isDisabled}}disabled text-muted{{/if}}">
+                <div
+                    class="nav-item nav-link {{#if isActive}}active{{/if}} {{#if isDisabled}}disabled text-muted{{/if}}">
                     {{text}}
                 </div>
             </div>
@@ -103,8 +104,8 @@
         {{/with}}
     </section>
     <hr>
-    <section>
-        <table class="table">
+    <section class="row">
+        <table class="col-12">
             {{#each footer}}
             <tr>
                 {{#each this}}
@@ -115,6 +116,7 @@
                     <a href="{{link}}">{{text}}</a>
                     {{/if}}
                 </td>
+
                 {{/each}}
             </tr>
             {{/each}}
