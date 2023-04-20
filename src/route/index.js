@@ -1511,6 +1511,9 @@ router.get('/shophome', function (req, res) {
           text: 'Help',
           href: 'https://www.youtube.com/',
         },
+        {
+          isDisabled: true,
+        },
       ],
     },
 
@@ -1758,18 +1761,22 @@ router.get('/shophome', function (req, res) {
         {
           text: 'Report History',
           link: 'https://www.youtube.com/feed/history/report_history',
+          isDisabled: true,
         },
         {
           text: 'Help',
           link: 'https://support.google.com/youtube/?hl=en',
+          isDisabled: true,
         },
         {
           text: 'Send Feedback',
           link: 'https://support.google.com/youtube/answer/4347644?hl=en',
+          isDisabled: true,
         },
         {
           text: 'About',
           link: 'https://www.youtube.com/about/',
+          isDisabled: true,
         },
       ],
     ],

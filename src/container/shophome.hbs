@@ -4,7 +4,11 @@
         <div class="card nav-tabs">
             {{#each links}}
             <div class="nav-item">
+                {{#if isDisabled}}
+                <div class="m-3 disabled text-muted">Disabled</div>
+                {{else}}
                 <a class="nav-link" href="{{href}}" target="_blank">{{text}}</a>
+                {{/if}}
             </div>
             {{/each}}
         </div>
@@ -14,17 +18,15 @@
         {{#with newsBlock}}
         {{#each cards}}
         <div class="col-md-3">
-            <div class="">
-                <div class="alert alert-dark">
-                    <h3 class="card-title">{{title}}</h3>
-                    <p class="text-muted">{{description}}</p>
-                    {{#if isTop}}
-                    <div class="text-bg-danger badge rounded-pill">Топ</div>
-                    {{/if}}
-                    {{#if isNew}}
-                    <div class="text-bg-success badge rounded-pill">Нова</div>
-                    {{/if}}
-                </div>
+            <div class="alert alert-dark">
+                <h3 class="card-title">{{title}}</h3>
+                <p class="text-muted">{{description}}</p>
+                {{#if isTop}}
+                <div class="text-bg-danger badge rounded-pill">Топ</div>
+                {{/if}}
+                {{#if isNew}}
+                <div class="text-bg-success badge rounded-pill">Нова</div>
+                {{/if}}
             </div>
         </div>
         {{/each}}
@@ -107,7 +109,11 @@
             <tr>
                 {{#each this}}
                 <td>
+                    {{#if isDisabled}}
+                    <div class="disabled text-muted" href="#">Disabled</div>
+                    {{else}}
                     <a href="{{link}}">{{text}}</a>
+                    {{/if}}
                 </td>
                 {{/each}}
             </tr>
