@@ -1,0 +1,15 @@
+{{#with navigation}}
+<nav class="">
+    <div class="card nav mb-5 nav-tabs col-3">
+        {{#each links}}
+        <div class="nav-item">
+            {{#if isDisabled}}
+            <div class="m-3 disabled text-muted">Disabled</div>
+            {{else}}
+            <a class="nav-link" href="{{href}}" target="_blank">{{text}}</a>
+            {{/if}}
+        </div>
+        {{/each}}
+    </div>
+</nav>
+{{/with}}
