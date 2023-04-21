@@ -1,0 +1,14 @@
+{{#each cards}}
+<div class="col-md-3">
+    <div class="alert alert-dark">
+        <h3 class="card-title">{{title}}</h3>
+        <p class="text-muted">{{description}}</p>
+        {{#if isTop}}
+        <div class="text-bg-danger badge rounded-pill">Топ</div>
+        {{/if}}
+        {{#if isNew}}
+        <div class="text-bg-success badge rounded-pill">Нова</div>
+        {{/if}}
+    </div>
+</div>
+{{/each}}
