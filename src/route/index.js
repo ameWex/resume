@@ -1804,8 +1804,6 @@ router.get('/shopproduct', function (req, res) {
         {
           text: 'Help',
           href: 'https://www.youtube.com/',
-        },
-        {
           isDisabled: true,
         },
       ],
@@ -2025,8 +2023,6 @@ router.get('/shopnews', function (req, res) {
         {
           text: 'Help',
           href: 'https://www.youtube.com/',
-        },
-        {
           isDisabled: true,
         },
       ],
