@@ -1,10 +1,14 @@
 <main class="p-3 m-2">
     {{#with navigation}}
-    <nav class="nav mb-5">
-        <div class="card nav-tabs">
+    <nav class="">
+        <div class="card nav mb-5 nav-tabs col-3">
             {{#each links}}
             <div class="nav-item">
+                {{#if isDisabled}}
+                <div class="m-3 disabled text-muted">Disabled</div>
+                {{else}}
                 <a class="nav-link" href="{{href}}" target="_blank">{{text}}</a>
+                {{/if}}
             </div>
             {{/each}}
         </div>
@@ -14,17 +18,15 @@
         {{#with newsBlock}}
         {{#each cards}}
         <div class="col-md-3">
-            <div class="">
-                <div class="alert alert-dark">
-                    <h3 class="card-title">{{title}}</h3>
-                    <p class="text-muted">{{description}}</p>
-                    {{#if isTop}}
-                    <div class="text-bg-danger badge rounded-pill">Топ</div>
-                    {{/if}}
-                    {{#if isNew}}
-                    <div class="text-bg-success badge rounded-pill">Нова</div>
-                    {{/if}}
-                </div>
+            <div class="alert alert-dark">
+                <h3 class="card-title">{{title}}</h3>
+                <p class="text-muted">{{description}}</p>
+                {{#if isTop}}
+                <div class="text-bg-danger badge rounded-pill">Топ</div>
+                {{/if}}
+                {{#if isNew}}
+                <div class="text-bg-success badge rounded-pill">Нова</div>
+                {{/if}}
             </div>
         </div>
         {{/each}}
@@ -36,9 +38,14 @@
         {{#each tabs}}
         <nav class="nav col-2">
             <div class="nav-tabs">
-                <div class="nav-item {{#if isActive}}active{{/if}} {{#if isDisabled}}disabled text-muted{{/if}}">
-                    {{text}}
-                </div>
+                <<<<<<< HEAD <div
+                    class="nav-item {{#if isActive}}active{{/if}} {{#if isDisabled}}disabled text-muted{{/if}}">
+                    =======
+                    <div
+                        class="nav-item nav-link {{#if isActive}}active{{/if}} {{#if isDisabled}}disabled text-muted{{/if}}">
+                        >>>>>>> 4ad71f458b6d6d24598948b1f07f364524852879
+                        {{text}}
+                    </div>
             </div>
         </nav>
         {{/each}}
@@ -101,17 +108,30 @@
         {{/with}}
     </section>
     <hr>
-    <section>
+    <<<<<<< HEAD <section>
         <table class="table">
-            {{#each footer}}
-            <tr>
-                {{#each this}}
-                <td>
-                    <a href="{{link}}">{{text}}</a>
-                </td>
-                {{/each}}
-            </tr>
-            {{/each}}
-        </table>
-    </section>
+            =======
+            <section class="row">
+                <table class="col-12">
+                    >>>>>>> 4ad71f458b6d6d24598948b1f07f364524852879
+                    {{#each footer}}
+                    <tr>
+                        {{#each this}}
+                        <td>
+                            <<<<<<< HEAD <a href="{{link}}">{{text}}</a>
+                        </td>
+                        =======
+                        {{#if isDisabled}}
+                        <div class="disabled text-muted" href="#">Disabled</div>
+                        {{else}}
+                        <a href="{{link}}">{{text}}</a>
+                        {{/if}}
+                        </td>
+
+                        >>>>>>> 4ad71f458b6d6d24598948b1f07f364524852879
+                        {{/each}}
+                    </tr>
+                    {{/each}}
+                </table>
+            </section>
 </main>

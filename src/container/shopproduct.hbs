@@ -145,11 +145,11 @@
     <hr class="my-5">
 
     <section class="row">
-        <div class="col-12">
+        <div class="">
             {{#with service}}
             <div class="card text-bg-success">
                 <h2 class="text-center">{{title}}</h2>
-                <p class="text-center">{{description}}</p>
+                <p class="text-center mb-4">{{description}}</p>
                 {{#each buttons}}
                 <a href="{{link}}" rel="{{rel}}" class="btn btn-primary ">{{text}}</a>
                 {{/each}}
@@ -157,33 +157,18 @@
             {{/with}}
         </div>
     </section>
-
     <hr class="my-5">
-
-    <section class="row">
-        <div class="col-12">
+    <section>
+        <table class="table">
             {{#each footer}}
-            <table class="table">
-                <tbody>
-                    <tr>
-                        <td>
-                            <a href="{{link}}">{{text}}</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <a href="{{link}}">{{text}}</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <a href="{{link}}">{{text}}</a>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+            <tr>
+                {{#each this}}
+                <td>
+                    <a href="{{link}}">{{text}}</a>
+                </td>
+                {{/each}}
+            </tr>
             {{/each}}
-        </div>
+        </table>
     </section>
-
 </main>
