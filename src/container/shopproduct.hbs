@@ -1,22 +1,14 @@
 <main>
-    {{#with navigation}}
-    <nav>
-        {{#each links}}
-        <div>
-            <a href="{{href}}">{{text}}</a>
-        </div>
-        {{/each}}
-    </nav>
-    {{/with}}
-    {{#each breadcrumb}}
-    <div class="">
+    {{> shopheader}}
+    <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
+            {{#each breadcrumb}}
             <li class="breadcrumb-item">
-                <a class="" href="{{url}}">{{name}}</a>
+                <a href="{{url}}">{{name}}</a>
             </li>
+            {{/each}}
         </ol>
-    </div>
-    {{/each}}
+    </nav>
     {{#with productData}}
     <div>
         <section class="row col-12">
@@ -119,56 +111,12 @@
     <hr class="my-5">
 
     {{#with goodsOtherBlock}}
-    <section class="row">
-        <div class="col-12">
-            {{#each cards}}
-            <div class="card col-4">
-                <img src="{{image}}" alt="img" class="card-header">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        {{title}}
-                        {{#if isHot}}
-                        <div class="badge rounded-pill text-bg-warning">HOT!</div>
-                        {{/if}}
-                        {{#if isNew}}
-                        <div class="badge rounded-pill text-bg-info">New</div>
-                        {{/if}}
-                    </h5>
-                    <p>{{description}}</p>
-                </div>
-            </div>
-            {{/each}}
-        </div>
-    </section>
+    {{> shopcard}}
     {{/with}}
 
     <hr class="my-5">
 
-    <section class="row">
-        <div class="">
-            {{#with service}}
-            <div class="card text-bg-success">
-                <h2 class="text-center">{{title}}</h2>
-                <p class="text-center mb-4">{{description}}</p>
-                {{#each buttons}}
-                <a href="{{link}}" rel="{{rel}}" class="btn btn-primary ">{{text}}</a>
-                {{/each}}
-            </div>
-            {{/with}}
-        </div>
-    </section>
+    {{> shopaction}}
     <hr class="my-5">
-    <section>
-        <table class="table">
-            {{#each footer}}
-            <tr>
-                {{#each this}}
-                <td>
-                    <a href="{{link}}">{{text}}</a>
-                </td>
-                {{/each}}
-            </tr>
-            {{/each}}
-        </table>
-    </section>
+    {{> shopfooter}}
 </main>
