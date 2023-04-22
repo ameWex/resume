@@ -1,0 +1,17 @@
+<section class="alert">
+    {{#with service}}
+    <div class="card text-center">
+        <div class=" alert-success text-bg-success">
+            <h2 class="display-6 card-header">{{title}}</h2>
+            <div class="card-body">
+                <p>{{description}}</p>
+                {{#each buttons}}
+                <div>
+                    <a class="btn btn-primary" href="{{link}}">{{text}}</a>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+    {{/with}}
+</section>

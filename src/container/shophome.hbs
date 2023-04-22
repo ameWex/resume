@@ -1,19 +1,5 @@
 <main class="p-3 m-2">
-    {{#with navigation}}
-    <nav class="">
-        <div class="card nav mb-5 nav-tabs col-3">
-            {{#each links}}
-            <div class="nav-item">
-                {{#if isDisabled}}
-                <div class="m-3 disabled text-muted">Disabled</div>
-                {{else}}
-                <a class="nav-link" href="{{href}}" target="_blank">{{text}}</a>
-                {{/if}}
-            </div>
-            {{/each}}
-        </div>
-    </nav>
-    {{/with}}
+    {{> shopheader}}
     <section class="row">
         {{#with newsBlock}}
         {{#each cards}}
@@ -38,37 +24,19 @@
         {{#each tabs}}
         <nav class="nav col-2">
             <div class="nav-tabs">
-                <div
-                    class="nav-item nav-link {{#if isActive}}active{{/if}} {{#if isDisabled}}disabled text-muted{{/if}}">
-                    {{text}}
+                <div class="nav-item {{#if isActive}}active{{/if}} {{#if isDisabled}}disabled text-muted{{/if}}">
+                    <div
+                        class="nav-item nav-link {{#if isActive}}active{{/if}} {{#if isDisabled}}disabled text-muted{{/if}}">
+                        {{text}}
+                    </div>
                 </div>
             </div>
         </nav>
         {{/each}}
     </section>
     <hr>
-    <section>
-        <div class="row">
-            {{#each cards}}
-            <div class="card col-md-4">
-                <div class="card-header">
-                    <img src="{{image}}" alt="{{title}}" class="col-12">
-                </div>
-                <div class="card-body">
-                    <h5 class="display-5">{{title}}</h5>
-                    <p>{{description}}</p>
-                    {{#if isHot}}
-                    <div class="badge text-bg-warning rounded-pill">HOT!</div>
-                    {{/if}}
-                    {{#if isNew}}
-                    <div class="badge text-bg-info rounded-pill">New</div>
-                    {{/if}}
-                </div>
-            </div>
-            {{/each}}
-        </div>
-        {{/with}}
-    </section>
+    {{>shopcard}}
+    {{/with}}
     <hr>
     <section class="alert">
         {{#with subscribe}}
@@ -86,40 +54,7 @@
         {{/with}}
     </section>
     <hr>
-    <section class="alert">
-        {{#with service}}
-        <div class="card text-center">
-            <div class=" alert-success text-bg-success">
-                <h2 class="display-6 card-header">{{title}}</h2>
-                <div class="card-body">
-                    <p>{{description}}</p>
-                    {{#each buttons}}
-                    <div>
-                        <a class="btn btn-primary" href="{{link}}">{{text}}</a>
-                    </div>
-                    {{/each}}
-                </div>
-            </div>
-        </div>
-        {{/with}}
-    </section>
+    {{> shopaction}}
     <hr>
-    <section class="row">
-        <table class="col-12">
-            {{#each footer}}
-            <tr>
-                {{#each this}}
-                <td>
-                    {{#if isDisabled}}
-                    <div class="disabled text-muted" href="#">Disabled</div>
-                    {{else}}
-                    <a href="{{link}}">{{text}}</a>
-                    {{/if}}
-                </td>
-
-                {{/each}}
-            </tr>
-            {{/each}}
-        </table>
-    </section>
+    {{> shopfooter}}
 </main>
