@@ -172,29 +172,26 @@
             <hr class="my-3">
 
             {{#with quiz}}
-            <div>
+            <div class="mb-3">
                 <h3>{{title}}</h3>
                 {{#with preference}}
-                <div>
-                    {{#each options}}
-                    <div class="form-check">
-                        <div class="form-label">{{title}}</div>
-                        <select class="form-check-input" type="radio">
-                            <option value="#">{{this}}</option>
-                        </select>
-
-                    </div>
-                    {{/each}}
+                <label class="form-label">{{title}}</label>
+                {{#each options}}
+                <div class="form-check">
+                    <label class="form-check-label">{{this}}</label>
+                    <input name="preference" class="form-check-input" type="radio">
                 </div>
+                {{/each}}
             </div>
             {{/with}}
 
-            <div>
-                {{#with your_experience}}
+            {{#with your_experience}}
+            <div class="">
                 <label class="form-label">{{label}}</label>
-                {{/with}}
                 <input class="form-control" type="text">
             </div>
+            {{/with}}
+
             {{#with purchase_frequency}}
             <div class="mb-5">
                 <label class="form-label">{{label}}</label>
@@ -207,13 +204,14 @@
             {{/with}}
 
             {{#with factors}}
-            <div class="form-check">
-                <div class="form-text">{{title}}</div>
-                <select class="form-check-input" type="text">
-                    {{#each options}}
-                    <option value="@index">{{this}}</option>
-                    {{/each}}
-                </select>
+            <div class="mb-3">
+                <div>{{title}}</div>
+                {{#each options}}
+                <div class="form-check">
+                    <label class="form-check-label">{{this}}</label>
+                    <input name="preference" class="form-check-input" type="checkbox">
+                </div>
+                {{/each}}
             </div>
             {{/with}}
             {{/with}}
@@ -252,6 +250,8 @@
                 </div>
             </div>
         </section>
+
+        <hr class="my-3">
         {{> shopfooter}}
     </section>
 </main>

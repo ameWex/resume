@@ -2451,7 +2451,7 @@ router.get('/shoporder', function (req, res) {
           'Телевізори',
         ],
       },
-      your_expirience: {
+      your_experience: {
         label: 'Який у Вас досвід користування ПК',
       },
       purchase_frequency: {
