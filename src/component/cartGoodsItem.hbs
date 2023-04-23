@@ -1,0 +1,25 @@
+<section class="row">
+    {{#each goodsBlock}}
+    <img class="col-2" width="100" src="{{image}}" alt="{{name}}">
+    <div class="card-body col-4">
+        <h5 class="card-title">{{name}}</h5>
+        <p>{{description}}</p>
+    </div>
+
+    <div class="col-2">
+        {{price.title}}
+        <br>
+        {{price.value}}
+    </div>
+    <div class="col-2">{{amount}}</div>
+
+    <div class="col-2">
+        {{#each buttons}}
+        <div class="mb-2 btn {{#if isPrimary}}btn-primary{{/if}}{{#if isDanger}}btn-outline-danger{{/if}}">
+            {{this.text}}</div>
+        <br>
+        {{/each}}
+    </div>
+    <hr>
+    {{/each}}
+</section>
