@@ -81,57 +81,59 @@
         {{/with}}
 
         <section class="col-8">
-            {{#each goodsList}}
-            <div class="card col-6">
-                <div class="card-header">
-                    <img src="{{img}}" alt="img">
+            <div class="row">
+                {{#each goodsList}}
+                <div class="card col-6">
+                    <div class="card-header">
+                        <img src="{{img}}" alt="img">
+                    </div>
+                    <div class="card-body">
+                        <div>
+                            {{#if isNew}}
+                            <div class="text-bg-info badge rounded-pill">Нове</div>
+                            {{/if}}
+                            {{#if isHot}}
+                            <div class="text-bg-warning badge rounded-pill">HOT!</div>
+                            {{/if}}
+                        </div>
+                        <br>
+                        <div>
+                            {{#if isFast}}
+                            <div class="btn btn-success">Швидка доставка</div>
+                            {{/if}}
+                            {{#if isFree}}
+                            <div class="btn btn-secondary">Безкоштовна доставка</div>
+                            {{/if}}
+                        </div>
+
+                        <h3>{{name}}</h3>
+
+                        {{#with review}}
+                        <div class="text-muted">{{amount}} {{text}}</div>
+                        {{/with}}
+
+                        <h4>{{price}}</h4>
+
+                        <div>{{delivery}}</div>
+
+                        <div class="my-1">
+                            {{#each buttons}}
+                            <a class="btn {{#if isPrimary}}btn-primary{{/if}}{{#if isSecondary}}btn-secondary{{/if}}"
+                                href="{{link}}">{{text}}</a>
+                            {{/each}}
+                        </div>
+
+                        <ul class="my-2">
+                            {{#each characteristics}}
+                            <li>
+                                {{title}}: {{value}}
+                            </li>
+                            {{/each}}
+                        </ul>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <div>
-                        {{#if isNew}}
-                        <div class="text-bg-info badge rounded-pill">Нове</div>
-                        {{/if}}
-                        {{#if isHot}}
-                        <div class="text-bg-warning badge rounded-pill">HOT!</div>
-                        {{/if}}
-                    </div>
-                    <br>
-                    <div>
-                        {{#if isFast}}
-                        <div class="btn btn-success">Швидка доставка</div>
-                        {{/if}}
-                        {{#if isFree}}
-                        <div class="btn btn-secondary">Безкоштовна доставка</div>
-                        {{/if}}
-                    </div>
-
-                    <h3>{{name}}</h3>
-
-                    {{#with review}}
-                    <div class="text-muted">{{amount}} {{text}}</div>
-                    {{/with}}
-
-                    <h4>{{price}}</h4>
-
-                    <div>{{delivery}}</div>
-
-                    <div class="my-1">
-                        {{#each buttons}}
-                        <a class="btn {{#if isPrimary}}btn-primary{{/if}}{{#if isSecondary}}btn-secondary{{/if}}"
-                            href="{{link}}">{{text}}</a>
-                        {{/each}}
-                    </div>
-
-                    <ul class="my-2">
-                        {{#each characteristics}}
-                        <li>
-                            {{title}}: {{value}}
-                        </li>
-                        {{/each}}
-                    </ul>
-                </div>
+                {{/each}}
             </div>
-            {{/each}}
         </section>
     </section>
     {{> shopaction}}
