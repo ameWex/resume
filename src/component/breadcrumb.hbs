@@ -3,9 +3,9 @@
         {{#each breadcrumb}}
         <li class="breadcrumb-item">
             {{#if isDisabled}}
-            <a href="" class="text-muted">{{name}}</a>
+            <div href="#" class="breadcrumb">{{name}}</div>
             {{else}}
-            <a href="{{url}}">{{name}}</a>
+            <a {{#if url}}class="active" {{else}}class="disabled" {{/if}} href="{{url}}">{{name}}</a>
             {{/if}}
         </li>
         {{/each}}
