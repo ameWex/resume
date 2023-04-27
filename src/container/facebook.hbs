@@ -1,3 +1,64 @@
-<div>
-    <h1>Hello world!</h1>
-</div>
+<main class="p-3">
+    <h1>{{name}}</h1>
+
+    <ul class="row list-group">
+        {{#each users}}
+        <li class="col-5 list-group-item">
+            <b>{{id}}</b>
+            <h2>{{name}}</h2>
+            <em>{{gender}}</em>
+            <i>{{age}}</i>
+
+            <ul class="list-group">
+                {{#each friends}}
+                <li class="list-group-item">
+                    <b>{{id}}</b>
+                    <h2>{{name}}</h2>
+                    <em>{{gender}}</em>
+                    <i>{{age}}</i>
+
+                    <ul class="list-group">
+                        {{#each mutual_friends}}
+                        <li class="list-group-item">
+                            <b>{{id}}</b>
+                            <h2>{{name}}</h2>
+                            <em>{{gender}}</em>
+                            <i>{{age}}</i>
+
+                            <ul class="list-group">
+                                {{#each mutual_friends}}
+                                <li class="list-group-item">
+                                    <b>{{id}}</b>
+                                    <h2>{{name}}</h2>
+                                    <em>{{gender}}</em>
+                                    <i>{{age}}</i>
+                                </li>
+                                {{/each}}
+                            </ul>
+                        </li>
+                        {{/each}}
+                    </ul>
+                </li>
+                {{/each}}
+            </ul>
+        </li>
+        {{#each groups}}
+        <li class="col-5 list-group-item">
+            <b>{{id}}</b>
+            <h2>{{name}}</h2>
+            <p>{{description}}</p>
+            <ul class="list-group">
+                {{#each members}}
+                <li class="list-group-item">
+                    <b>{{id}}</b>
+                    <h2>{{name}}</h2>
+                    <em>{{gender}}</em>
+                    <i>{{age}}</i>
+                </li>
+                {{/each}}
+            </ul>
+        </li>
+        {{/each}}
+    </ul>
+    {{/each}}
+</main>
