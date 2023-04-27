@@ -40,7 +40,116 @@ router.get('/', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
-  res.render('index', {})
+  res.render('index', {
+
+    layout: 'index',
+
+    header: {
+      name: {
+        firstname: 'Vladyslav',
+        lastname: 'Bilous',
+      },
+      project: {
+        projectname: 'Resume project'
+      },
+    },
+
+    title: 'Список сторінок',
+    pagelist: [
+      {
+        link: '/summary',
+        text: 'Summary',
+      },
+      {
+        link: '/skills',
+        text: 'Skills',
+      },
+      {
+        link: '/education',
+        text: 'Education',
+      },
+      {
+        link: '/work',
+        text: 'Work',
+      },
+      {
+        link: '/person',
+        text: 'Person',
+      },
+      {
+        link: '/bio',
+        text: 'Bio',
+      },
+      {
+        link: '/program',
+        text: 'Program',
+      },
+      {
+        link: '/web',
+        text: 'Web',
+      },
+      {
+        link: '/js',
+        text: 'Java Script',
+      },
+      {
+        link: '/car',
+        text: 'Car',
+      },
+      {
+        link: '/mac',
+        text: 'Mac',
+      },
+      {
+        link: '/facebook',
+        text: 'Facebook',
+      },
+      {
+        link: '/task21',
+        text: 'Task 2.1',
+      },
+      {
+        link: '/task22',
+        text: 'Task 2.2',
+      },
+      {
+        link: '/task31',
+        text: 'Task 3.1',
+      },
+      {
+        link: '/shophome',
+        text: 'Shop Home',
+      },
+      {
+        link: '/shopproduct',
+        text: 'Shop Product',
+      },
+      {
+        link: '/shopnews',
+        text: 'Shop News',
+      },
+      {
+        link: '/shoporder',
+        text: 'Shop order',
+      },
+      {
+        link: '/shopcart',
+        text: 'Shop Cart',
+      },
+      {
+        link: '/shopprofile',
+        text: 'Shop Profile',
+      },
+      {
+        link: '/shopreview',
+        text: 'Shop Review',
+      },
+      {
+        link: '/shopcatalog',
+        text: 'Shop Catalog',
+      },
+    ],
+  })
   //                  ↑↑ сюди вводимо JSON дані
 })
 
@@ -466,6 +575,10 @@ router.get('/program', function (req, res) {
 
     layout: 'basic',
 
+    page: {
+      title: 'Resume | Program',
+    },
+
     program: {
       excursion: {
         name: 'Cultural Tour',
@@ -553,6 +666,9 @@ router.get('/web', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('web', {
     layout: 'basic',
+    page: {
+      title: 'Resume | Web',
+    },
     web: {
       languages: [
         {
@@ -683,6 +799,9 @@ router.get('/js', function (req, res) {
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('js', {
     layout: 'basic',
+    page: {
+      title: 'Resume | JavaScript',
+    },
     name: 'JavaScript',
     description:
       'JavaScript is a popular high-level, dynamic, and interpreted programming language.',
@@ -762,6 +881,9 @@ router.get('/car', function (req, res) {
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('car', {
     layout: 'basic',
+    page: {
+      title: 'Resume | Car',
+    },
     make: 'Toyota',
     model: 'Camry',
     year: 2022,
@@ -863,6 +985,9 @@ router.get('/mac', function (req, res) {
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('mac', {
     layout: 'basic',
+    page: {
+      title: 'Resume | Mac',
+    },
     name: 'Apple MacBook Pro',
     description: 'The ultimate notebook for power users',
     price: 1999.99,
@@ -950,6 +1075,9 @@ router.get('/facebook', function (req, res) {
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('facebook', {
     layout: 'basic',
+    page: {
+      title: 'Resume | Facebook',
+    },
     name: 'Facebook',
     users: [
       {
@@ -1116,6 +1244,9 @@ router.get('/task21', function (req, res) {
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('task21', {
     layout: 'basic',
+    page: {
+      title: 'Resume | Task 2.1',
+    },
     heading: {
       main: {
         title: 'JavaScript',
@@ -1185,6 +1316,9 @@ router.get('/task22', function (req, res) {
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('task22', {
     layout: 'basic',
+    page: {
+      title: 'Resume | Task 2.2',
+    },
     page_header: {
       title: 'InnovaMind',
       description: 'Welcome to our wonderful community',
@@ -1243,6 +1377,9 @@ router.get('/task31', function (req, res) {
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('task31', {
     layout: 'basic',
+    page: {
+      title: 'Resume | Task 3.1',
+    },
     navigation: {
       links: [
         {
@@ -1496,7 +1633,10 @@ router.get('/shophome', function (req, res) {
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('shophome', {
-    layout: 'basic',
+    layout: 'shop',
+    page: {
+      title: 'Shop | Home',
+    },
     navigation: {
       links: [
         {
@@ -1790,7 +1930,10 @@ router.get('/shopproduct', function (req, res) {
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('shopproduct', {
-    layout: 'basic',
+    layout: 'shop',
+    page: {
+      title: 'Shop | Product',
+    },
     navigation: {
       links: [
         {
@@ -2007,6 +2150,9 @@ router.get('/shopnews', function (req, res) {
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('shopnews', {
     layout: 'shop',
+    page: {
+      title: 'Shop | News',
+    },
     navigation: {
       links: [
         {
@@ -2214,6 +2360,9 @@ router.get('/shoporder', function (req, res) {
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('shoporder', {
     layout: 'shop',
+    page: {
+      title: 'Shop | Order',
+    },
     navigation: {
       links: [
         {
@@ -2579,6 +2728,9 @@ router.get('/shopcart', function (req, res) {
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('shopcart', {
     layout: 'shop',
+    page: {
+      title: 'Shop | Cart',
+    },
     navigation: {
       links: [
         {
@@ -2824,6 +2976,9 @@ router.get('/shopprofile', function (req, res) {
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('shopprofile', {
     layout: 'shop',
+    page: {
+      title: 'Shop | Profile',
+    },
     navigation: {
       links: [
         {
@@ -3115,6 +3270,9 @@ router.get('/shopreview', function (req, res) {
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('shopreview', {
     layout: 'shop',
+    page: {
+      title: 'Shop | Review',
+    },
     navigation: {
       links: [
         {
@@ -3400,6 +3558,9 @@ router.get('/shopcatalog', function (req, res) {
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('shopcatalog', {
     layout: 'shop',
+    page: {
+      title: 'Shop | Catalog',
+    },
     navigation: {
       links: [
         {
@@ -3765,9 +3926,6 @@ router.get('/shopcatalog', function (req, res) {
   })
   //                  ↑↑ сюди вводимо JSON дані
 })
-
-
-
 
 
 // Підключаємо роутер до бек-енду
